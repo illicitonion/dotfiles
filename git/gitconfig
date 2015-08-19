@@ -1,0 +1,5 @@
+[alias]
+	l = log --stat --pretty=short --graph --decorate
+[user]
+	email = daniel@matrix.org
+	name = Daniel Wagner-Hall
