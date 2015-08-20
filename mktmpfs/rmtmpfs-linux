@@ -1,9 +1,4 @@
 #!/bin/bash -eu
 
-if [[ "$(id -u)" != "0" ]]; then
-  echo >&2 "Must run as root"
-  exit 1
-fi
-
-umount /mnt/tmp
-rm -rf /mnt/tmp
+sudo umount /mnt/tmp
+sudo rm -rf /mnt/tmp

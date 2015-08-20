@@ -1,15 +1,10 @@
 #!/bin/bash -eu
 
-if [[ "$(id -u)" != "0" ]]; then
-  echo >&2 "Must run as root"
-  exit 1
-fi
-
 if [[ $# != 1 ]]; then
   echo >&2 "usage: $0 size"
-  exit 2
+  exit 1
 fi
 size="$1"
 
-mkdir -p /mnt/tmp
-mount -t tmpfs -o size="${size}" tmpfs /mnt/tmp
+sudo mkdir -p /mnt/tmp
+sudo mount -t tmpfs -o size="${size}" tmpfs /mnt/tmp
