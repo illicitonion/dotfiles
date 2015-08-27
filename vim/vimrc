@@ -20,6 +20,9 @@ set statusline=%f%=char:%c/%{strlen(getline('.'))}\ \ \ \ line:%l/%L\ \ \ \ \ %P
 set laststatus=2
 set number
 
+set autoindent
+set shiftwidth=2
+
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType perl set tabstop=3|set shiftwidth=3|set expandtab
 
