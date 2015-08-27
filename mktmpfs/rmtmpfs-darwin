@@ -1,0 +1,4 @@
+#!/bin/bash -eu
+
+sudo rm -rf /mnt/tmp
+hdiutil detach /Volumes/tmpfs
