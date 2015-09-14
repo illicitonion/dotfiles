@@ -6,3 +6,4 @@ if [[ self != /* ]]; then
 fi
 
 ln -s "$(dirname ${self})/gitconfig" ~/.gitconfig
+ln -s "$(dirname ${self})/git-pushme" ~/bin/git-pushme

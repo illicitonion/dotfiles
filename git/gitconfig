@@ -3,3 +3,5 @@
 [user]
 	email = daniel@matrix.org
 	name = Daniel Wagner-Hall
+[push]
+	default = simple

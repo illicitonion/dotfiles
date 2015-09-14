@@ -22,5 +22,7 @@ set number
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType perl set tabstop=3|set shiftwidth=3|set expandtab
 autocmd FileType objc set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType shell set tabstop=2|set shiftwidth=2|set expandtab
 
 set hidden " Don't force save on buffer switch
