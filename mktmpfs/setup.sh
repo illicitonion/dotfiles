@@ -5,10 +5,16 @@ if [[ self != /* ]]; then
   self="$(pwd)/${self}"
 fi
 
-if [[ "$(uname)" == "Linux" ]]; then
-  ln -s "$(dirname ${self})/mktmpfs-linux" ~/bin/mktmpfs
-  ln -s "$(dirname ${self})/rmtmpfs-linux" ~/bin/rmtmpfs
-else
-  echo >&2 "Unrecognised uname"
-  exit 1
-fi
+case "$(uname)" in
+  Linux)
+    ln -s "$(dirname ${self})/mktmpfs-linux" ~/bin/mktmpfs
+    ln -s "$(dirname ${self})/rmtmpfs-linux" ~/bin/rmtmpfs
+    ;;
+  Darwin)
+    ln -s "$(dirname ${self})/mktmpfs-darwin" ~/bin/mktmpfs
+    ln -s "$(dirname ${self})/rmtmpfs-darwin" ~/bin/rmtmpfs
+    ;;
+  *)
+    echo >&2 "Unrecognised uname"
+    exit 1
+esac
