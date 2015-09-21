@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/Music
+exec abcde -o mp3
