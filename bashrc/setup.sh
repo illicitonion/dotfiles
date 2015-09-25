@@ -12,6 +12,7 @@ case "$(uname)" in
     fi
 
     file="$(dirname ${self})/linux.sh"
+    file="${file//\/.\//\/}"
     if ! $(grep "${file}" "${HOME}/.bashrc_custom" >/dev/null 2>/dev/null); then
       sed -i "1i\\
 . ${file}\\
@@ -20,6 +21,7 @@ case "$(uname)" in
     ;;
   Darwin)
     file="$(dirname ${self})/darwin.sh"
+    file="${file//\/.\//\/}"
     if ! $(grep "${file}" "${HOME}/.bash_profile" >/dev/null 2>/dev/null); then
       sed -i '' "1i\\
 . ${file}\\
