@@ -1,11 +1,8 @@
 #!/bin/bash -eu
 
-self="$0"
-if [[ self != /* ]]; then
-  self="$(pwd)/${self}"
-fi
+. "$(dirname $0)/../common.sh"
 
-ln -s "$(dirname ${self})/vimrc" ~/.vimrc
+symlink vimrc ~/.vimrc
 if [[ ! -e ~/.vim/bundle/Vundle.vim ]]; then
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi

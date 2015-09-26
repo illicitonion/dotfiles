@@ -1,8 +1,5 @@
 #!/bin/bash -eu
 
-self="$0"
-if [[ self != /* ]]; then
-  self="$(pwd)/${self}"
-fi
+. $(dirname $0)/../common.sh
 
-ln -s "$(dirname ${self})/publish" ~/bin/publish
+symlink publish ~/bin/publish

@@ -1,9 +1,6 @@
 #!/bin/bash -eu
 
-self="$0"
-if [[ self != /* ]]; then
-  self="$(pwd)/${self}"
-fi
+. "$(dirname $0)/../common.sh"
 
-ln -s "$(dirname ${self})/gitconfig" ~/.gitconfig
-ln -s "$(dirname ${self})/git-pushme" ~/bin/git-pushme
+symlink gitconfig ~/.gitconfig
+symlink git-pushme ~/bin/git-pushme
