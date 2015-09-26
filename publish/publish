@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -eu
+#!/bin/bash -eu
 
 if [[ $# -eq 0 || $# -gt 2 ]]; then
   echo >&2 "Usage: $0 src [dst-basename]"
