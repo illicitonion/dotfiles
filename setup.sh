@@ -2,6 +2,7 @@
 
 before=$(pwd)
 
+cd "$(dirname $0)"
 00-realpath/setup.sh
 
 cd "${before}"
