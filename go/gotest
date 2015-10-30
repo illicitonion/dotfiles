@@ -1,0 +1,2 @@
+#!/bin/bash -eu
+exec go test $(find . -name "*_test.go" | sed -e 's#/[^/]*$##' | sort -u) "$@"
