@@ -5,14 +5,15 @@ if [[ "${self}" != /* ]]; then
   self="$(pwd)/${self}"
 fi
 
-touch "${HOME}/.bashrc_custom"
-
 case "$(uname)" in
   Linux)
     if ! $(grep "bashrc_custom" "${HOME}/.bashrc" >/dev/null 2>/dev/null); then
       echo ". ${HOME}/.bashrc_custom" >> "${HOME}/.bashrc"
     fi
 
+    if [[ ! -f "${HOME}/.bashrc_custom" ]]; then
+      echo "" > "${HOME}/.bashrc_custom"
+    fi
     file="$(dirname ${self})/linux.sh"
     file="${file//\/.\//\/}"
     if ! $(grep "${file}" "${HOME}/.bashrc_custom" >/dev/null 2>/dev/null); then

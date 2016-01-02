@@ -10,5 +10,6 @@ root="$(realpath "$(dirname "$0")")"
 
 for f in "${root}"/*/setup.sh; do
   cd "$(dirname ${f})"
+  . ~/.bashrc_custom
   ./setup.sh
 done
