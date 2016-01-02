@@ -4,3 +4,4 @@
 
 symlink gitconfig ~/.gitconfig
 symlink git-pushme ~/bin/git-pushme
+symlink git-unmerged ~/bin/git-unmerged
