@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+if [[ $# != 1 ]]; then
+  echo >&2 "usage: $0 filename"
+  exit 1
+fi
+
+path="$(realpath $1)"
+
+echo "$(whoami)@$(hostname):${path}"
