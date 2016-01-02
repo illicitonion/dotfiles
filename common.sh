@@ -13,6 +13,7 @@ function symlink() {
     echo >&2 "Symlink ${link} already exists and points to wrong location: want \"${abs_target}\" got \"$(readlink ${link})\""
     exit 1
   else
+    mkdir -p "$(dirname "${link}")"
     ln -s "${abs_target}" "${link}"
   fi
 }
