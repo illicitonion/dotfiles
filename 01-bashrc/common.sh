@@ -4,10 +4,14 @@ export PATH="${HOME}/bin:${PATH}"
 
 export EDITOR=vim
 
-export SSH_AUTH_SOCK="${HOME}/.ssh-agent"
-if [[ ! -e "${SSH_AUTH_SOCK}" ]]; then
-  ssh-agent -a "${SSH_AUTH_SOCK}"
+set +u
+if [[ "${SSH_AUTH_SOCK}" == "" ]]; then
+  export SSH_AUTH_SOCK="${HOME}/.ssh-agent"
+  if [[ ! -e "${SSH_AUTH_SOCK}" ]]; then
+    ssh-agent -a "${SSH_AUTH_SOCK}"
+  fi
 fi
+set -u
 
 export HISTIGNORE=' *'
 
