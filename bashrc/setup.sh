@@ -5,6 +5,8 @@ if [[ "${self}" != /* ]]; then
   self="$(pwd)/${self}"
 fi
 
+touch "${HOME}/.bashrc_custom"
+
 case "$(uname)" in
   Linux)
     if ! $(grep "bashrc_custom" "${HOME}/.bashrc" >/dev/null 2>/dev/null); then
