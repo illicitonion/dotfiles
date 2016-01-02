@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/bin/bash -e
 
 . "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 
