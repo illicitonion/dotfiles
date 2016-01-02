@@ -2,7 +2,7 @@
 
 if [[ "$(uname)" != "Linux" ]]; then
   echo >&2 "Skipping ripcd on non-linux platform"
-  exit 1
+  exit 0
 fi
 
 sudo apt-get install -y abcde eyed3 lame
