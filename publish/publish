@@ -13,7 +13,7 @@ else
 fi
 hostname=reich.illicitonion.com
 
-date="$(date +"%Y%M%d")"
+date="$(date +"%Y%m%d")"
 dir="/dump/${date}"
 
 ssh daw63@${hostname} mkdir -p "${dir}"
