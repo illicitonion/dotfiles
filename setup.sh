@@ -4,6 +4,8 @@ before=$(pwd)
 
 cd "$(dirname $0)"
 00-realpath/setup.sh
+01-bashrc/setup.sh
+. "${HOME}/.bash_profile"
 
 cd "${before}"
 root="$(realpath "$(dirname "$0")")"
