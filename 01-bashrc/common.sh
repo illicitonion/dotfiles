@@ -16,3 +16,7 @@ export HISTIGNORE=' *'
 export PERL5LIB=$HOME/.perl5/lib/perl5
 export PERL_MB_OPT=--install_base=$HOME/.perl5
 export PERL_MM_OPT=INSTALL_BASE=$HOME/.perl5
+
+export GOROOT="${HOME}/opt/go"
+export GOPATH="${HOME}"
+export PATH="${PATH}:${GOROOT}/bin"
