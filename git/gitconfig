@@ -1,7 +1,12 @@
 [alias]
 	l = log --stat --pretty=short --graph --decorate
+	staged = diff --name-only --cached
+	unstaged = ls-files -m
+	deleteremote = push origin --delete
 [user]
-	email = daniel@matrix.org
+	email = dawagner@gmail.com
 	name = Daniel Wagner-Hall
 [push]
 	default = simple
+[http]
+	cookiefile = /Users/daw63/.gitcookies
