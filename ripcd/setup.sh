@@ -1,11 +1,16 @@
 #!/bin/bash -eu
 
-if [[ "$(uname)" != "Linux" ]]; then
-  echo >&2 "Skipping ripcd on non-linux platform"
+case "$(uname)" in
+  Linux)
+    sudo apt-get install -y abcde eyed3 lame
+    ;;
+  Darwin)
+    brew install abcde
+    ;;
+  *)
+  echo >&2 "Skipping ripcd on unknown platform"
   exit 0
-fi
-
-sudo apt-get install -y abcde eyed3 lame
+esac
 
 . $(dirname $0)/../common.sh
 
