@@ -6,6 +6,8 @@ case "$(uname)" in
     ;;
   Darwin)
     brew install abcde
+    brew install eyed3
+    brew install lame
     ;;
   *)
   echo >&2 "Skipping ripcd on unknown platform"
