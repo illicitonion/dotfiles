@@ -16,9 +16,8 @@ hostname=reich.illicitonion.com
 date="$(date +"%Y%m%d")"
 dir="/dump/${date}"
 
-ssh daw63@${hostname} mkdir -p "${dir}"
-ssh daw63@${hostname} chmod 755 "${dir}"
+ssh daw63@${hostname} mkdir -p -m 0755 "${dir}"
 scp "${src}" daw63@${hostname}:"\"${dir}/${dst}\""
-ssh daw63@${hostname} chmod 644 \""${dir}/${dst}"\"
+ssh daw63@${hostname} chmod 0644 \""${dir}/${dst}"\"
 
 echo "http://${hostname}${dir}/${dst}"
