@@ -1,5 +1,9 @@
 #!/bin/bash -eu
 
+set +u
+[[ -n "$NORIPCD" ]] && exit 0
+set -u
+
 case "$(uname)" in
   Linux)
     sudo apt-get install -y abcde eyed3 lame
