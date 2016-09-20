@@ -25,7 +25,7 @@ case "$(uname)" in
   Darwin)
     file="$(dirname ${self})/darwin.sh"
     file="${file//\/.\//\/}"
-    if ! -e "${HOME}/.bash_profile"; then
+    if [[ ! -e "${HOME}/.bash_profile" ]]; then
       echo > "${HOME}/.bash_profile"
     fi
     if ! $(grep "${file}" "${HOME}/.bash_profile" >/dev/null 2>/dev/null); then
