@@ -1,2 +1,10 @@
 #!/bin/bash -eu
-git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+if [[ $# == 0 ]]; then
+  remote="origin"
+elif [[ $# == 1 ]]; then
+  remote="$1"
+else
+  echo >&2 "Usage: $0 [remote]"
+  exit 1
+fi
+git push --set-upstream "${remote}" "$(git rev-parse --abbrev-ref HEAD)"
