@@ -1,0 +1,11 @@
+#!/bin/bash -eu
+
+if [[ $# == 0 ]]; then
+  echo "Usage: $0 command" >&2
+  exit 1
+fi
+
+"$@" &
+pid="$!"
+
+while ps -o rss -p "${pid}"; do :; done
