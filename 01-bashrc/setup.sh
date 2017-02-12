@@ -21,6 +21,7 @@ case "$(uname)" in
 . ${file}\\
 " "${HOME}/.bashrc_custom"
     fi
+    echo "${HOME}/.bashrc"
     ;;
   Darwin)
     file="$(dirname ${self})/darwin.sh"
@@ -33,6 +34,7 @@ case "$(uname)" in
 . ${file}\\
 " "${HOME}/.bash_profile"
     fi
+    echo "${HOME}/.bash_profile"
     ;;
   *)
     echo >&2 "Unrecognised uname"
