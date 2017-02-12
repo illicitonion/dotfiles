@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 
 set +u
-[[ -n "$NORIPCD" ]] && exit 0
+[[ -z "$INSTALL_RIPCD" ]] && exit 0
 set -u
 
 case "$(uname)" in
