@@ -9,7 +9,7 @@ shift
 rest_domains=("$@")
 
 certbot-auto certonly --webroot -w /var/www/${domain} -d ${domain} $(for d in "${rest_domains[@]}"; do echo -n "-d ${d} "; done)
-sudo rm /var/www/keys/${domain}.privkey.pem
-sudo ln -s /etc/letsencrypt/live/${domain}/privkey.pem /var/www/keys/${domain}.privkey.pem
-sudo rm /var/www/keys/${domain}.fullchain.pem
-sudo ln -s /etc/letsencrypt/live/${domain}/fullchain.pem /var/www/keys/${domain}.fullchain.pem
+sudo rm -f /var/www/keys/${domain}.privkey.pem
+sudo ln -s -f /etc/letsencrypt/live/${domain}/privkey.pem /var/www/keys/${domain}.privkey.pem
+sudo rm -f /var/www/keys/${domain}.fullchain.pem
+sudo ln -s -f /etc/letsencrypt/live/${domain}/fullchain.pem /var/www/keys/${domain}.fullchain.pem
