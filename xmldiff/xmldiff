@@ -1,0 +1,3 @@
+#!/bin/bash -eu
+
+vimdiff <(head -n1 $1 | xmllint --format -) <(tail -n1 $1 | xmllint --format -)
