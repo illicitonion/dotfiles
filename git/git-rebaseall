@@ -1,0 +1,26 @@
+#!/bin/bash -eu
+git checkout master
+git pull
+
+for b in $(git branch | grep -v master); do
+  git checkout ${b}
+  git rebase master
+done
+git checkout master
+
+master="$(git show-ref -s refs/heads/master)"
+master_equivalents="$(git show-ref | grep "${master} refs/heads/" | awk '$2 != "refs/heads/master" {print $2}' | sed -e 's#^refs/heads/##')"
+if [[ -n "${master_equivalents}" ]]; then
+  echo ""
+  echo ""
+  echo "master equivalents:"
+  echo "${master_equivalents}"
+  echo ""
+  read -p "Delete? y/N: " -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo ""
+    for b in ${master_equivalents}; do
+      git branch -D ${b}
+    done
+  fi
+fi
