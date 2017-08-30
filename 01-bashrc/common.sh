@@ -2,6 +2,7 @@
 
 export PATH="${HOME}/bin:${PATH}"
 
+export VISUAL=vim
 export EDITOR=vim
 
 is_u="$(echo "$-" | grep u || true)"
