@@ -1,10 +1,26 @@
 #!/bin/bash -eu
+
+remote=origin
+if [[ "$1" != --* ]]; then
+  remote=$1
+  shift
+fi
+
+skip=("")
+for flag in "$@"; do
+  if [[ "${flag}" == --skip=* ]]; then
+    skip=("${skip[@]}" "${flag#--skip=}")
+  fi
+done
+
 git checkout master
-git pull
+git pull "${remote}" master
 
 for b in $(git branch | grep -v master); do
-  git checkout ${b}
-  git rebase master
+  if [[ ! " ${skip[@]} " =~ " ${b} " ]]; then
+    git checkout ${b}
+    git rebase master
+  fi
 done
 git checkout master
 
