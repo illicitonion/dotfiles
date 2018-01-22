@@ -1,0 +1,12 @@
+#!/bin/bash -eu
+
+if [[ $# -ne 1 ]]; then
+  echo >&2 "Usage: $0 branch-to-repick-atop-current"
+  exit 1
+fi
+branch="$1"
+
+current_sha="$(git rev-parse "${branch}")"
+git branch -D "${branch}"
+git checkout -b "${branch}"
+git cherry-pick "${current_sha}"
