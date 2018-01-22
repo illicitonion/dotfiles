@@ -1,0 +1,5 @@
+#!/bin/bash -eu
+
+commit="${1:-HEAD}"
+
+git diff-tree --no-commit-id --name-only -r "${commit}"
