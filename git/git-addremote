@@ -1,0 +1,15 @@
+#!/bin/bash -eu
+
+if [[ $# -ne 1 ]]; then
+  echo >&2 "Usage: $0 github-username"
+  exit 1
+fi
+username="$1"
+
+repo_name="$(git remote -v | grep git@github.com | cut -d / -f2 | cut -d . -f1 | sort -u)"
+if [[ $(echo "${repo_name}" | wc -w) -ne 1 ]]; then
+  echo >&2 "Could not determine repo name from options ${repo_name}"
+  exit 1
+fi
+
+git remote add "${username}" "git@github.com:${username}/${repo_name}.git"

@@ -9,3 +9,4 @@ symlink git-pushme ~/bin/git-pushme
 symlink git-rebaseall ~/bin/git-rebaseall
 symlink git-repick ~/bin/git-repick
 symlink git-unmerged ~/bin/git-unmerged
+symlink git-addremote ~/bin/git-addremote
