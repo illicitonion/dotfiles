@@ -8,6 +8,7 @@ fi
 case "$(uname)" in
   Linux)
     if ! $(grep "bashrc_custom" "${HOME}/.bashrc" >/dev/null 2>/dev/null); then
+      echo >> "${HOME}/.bashrc"
       echo ". ${HOME}/.bashrc_custom" >> "${HOME}/.bashrc"
     fi
 
