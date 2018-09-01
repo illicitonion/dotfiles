@@ -1,0 +1,6 @@
+#!/bin/bash -eu
+
+for c in $(docker ps -a | tail -n+2 | awk '{print $1}'); do
+  docker stop "${c}" || :
+  docker rm "${c}"
+done
