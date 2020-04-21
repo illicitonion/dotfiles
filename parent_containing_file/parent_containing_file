@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+path="$1"
+filename="$2"
+
+while [[ ! -f "${path}/${filename}" ]]; do
+  path="$(dirname "${path}")"
+done
+
+echo "${path}/${filename}"
