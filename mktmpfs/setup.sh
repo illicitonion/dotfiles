@@ -8,6 +8,7 @@ case "$(uname)" in
     symlink rmtmpfs-linux ~/bin/rmtmpfs
     ;;
   Darwin)
+    grep "^mnt" /etc/synthetic.conf >/dev/null 2>/dev/null || echo -e "mnt\t/Volumes" | sudo tee -a /etc/synthetic.conf
     symlink mktmpfs-darwin ~/bin/mktmpfs
     symlink rmtmpfs-darwin ~/bin/rmtmpfs
     ;;

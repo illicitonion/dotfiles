@@ -1,2 +1,2 @@
 #!/bin/bash -eu
-exec go test $(find . -name "*_test.go" | sed -e 's#/[^/]*$##' | sort -u) "$@"
+exec go test $(find . -name "*_test.go" | xargs -1 dirname | sort -u) "$@"

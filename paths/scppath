@@ -5,6 +5,4 @@ if [[ $# != 1 ]]; then
   exit 1
 fi
 
-path="$(realpath $1)"
-
-echo "$(whoami)@$(hostname):${path}"
+echo "$(whoami)@$(hostname):$(abspath "$1")"

@@ -12,12 +12,13 @@ else
   dst="$(basename "${src}")"
 fi
 hostname=reich.illicitonion.com
+username=daw63
 
 date="$(date +"%Y%m%d")"
 dir="/dump/${date}"
 
-ssh daw63@${hostname} mkdir -p -m 0755 "${dir}"
-scp "${src}" daw63@${hostname}:"\"${dir}/${dst}\""
-ssh daw63@${hostname} chmod 0644 \""${dir}/${dst}"\"
+ssh ${username}@${hostname} mkdir -p -m 0755 "${dir}"
+scp "${src}" "${username}@${hostname}:\"${dir}/${dst}\""
+ssh "${username}@${hostname}" chmod 0644 \""${dir}/${dst}"\"
 
 echo "http://${hostname}${dir}/${dst}"

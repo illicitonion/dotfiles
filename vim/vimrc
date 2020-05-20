@@ -4,14 +4,6 @@ syntax on
 filetype off " Required by Vundle
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'fatih/vim-go'
-Plugin 'rust-lang/rust.vim'
-let g:go_fmt_command = "goimports"
-
-call vundle#end()
-filetype plugin indent on " Required by Vundle
 
 digraph !? 8253
 digraph ?! 8253
@@ -24,13 +16,13 @@ set autoindent
 set shiftwidth=2
 
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType perl set tabstop=3|set shiftwidth=3|set expandtab
 autocmd FileType objc set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType shell set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType go set tabstop=4|set shiftwidth=4
 
+au BufRead,BufNewFile BUILD setfiletype python
 au BufRead,BufNewFile *.bzl setfiletype python
 au BufRead,BufNewFile BUCK setfiletype python
 
@@ -41,5 +33,6 @@ function! Preserve(command)
 endfunction
 
 autocmd BufWritePre BUCK :call Preserve('%!buildifier')
+autocmd BufWritePre BUILD :call Preserve('%!buildifier')
 
 set hidden " Don't force save on buffer switch

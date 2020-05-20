@@ -1,0 +1,25 @@
+export PATH="${HOME}/bin:${PATH}"
+export GOPATH="${HOME}"
+
+export EDITOR=vim
+export VISUAL="${EDITOR}"
+
+ulimit -n 10000
+
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+bindkey -e
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+setopt HIST_IGNORE_SPACE
+setopt noautomenu
+setopt nomenucomplete
+
+PROMPT='%~ %# '
+RPROMPT='%(?.%F{green}√%f.%F{red}✗%?%f)'

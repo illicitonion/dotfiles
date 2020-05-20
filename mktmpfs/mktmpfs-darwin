@@ -21,5 +21,3 @@ esac
 
 dev="$(hdiutil attach -nomount "ram://${sectors}")"
 diskutil erasevolume HFS+ tmpfs ${dev}
-sudo ln -s /Volumes/tmpfs /mnt/tmp
-sudo chmod 777 /mnt/tmp

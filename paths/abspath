@@ -1,0 +1,14 @@
+#!/bin/bash -eu
+
+if [[ $# != 1 ]]; then
+  echo >&2 "usage: $0 filename"
+  exit 1
+fi
+
+path="$1"
+if [[ "$1" != /* ]]; then
+  path="$(pwd)/${path}"
+fi
+
+
+echo "${path}"
