@@ -9,5 +9,3 @@
 	name = Daniel Wagner-Hall
 [push]
 	default = simple
-[http]
-	cookiefile = /Users/daw63/.gitcookies
