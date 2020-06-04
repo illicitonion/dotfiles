@@ -23,3 +23,5 @@ setopt nomenucomplete
 
 PROMPT='%~ %# '
 RPROMPT='%(?.%F{green}√%f.%F{red}✗%?%f)'
+
+WORDCHARS="${WORDCHARS}@"

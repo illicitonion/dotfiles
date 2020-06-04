@@ -4,6 +4,12 @@ syntax on
 filetype off " Required by Vundle
 
 set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gabrielelana/vim-markdown'
+call vundle#end()
+filetype plugin indent on
+
+set nofoldenable
 
 digraph !? 8253
 digraph ?! 8253
@@ -26,13 +32,12 @@ au BufRead,BufNewFile BUILD setfiletype python
 au BufRead,BufNewFile *.bzl setfiletype python
 au BufRead,BufNewFile BUCK setfiletype python
 
+autocmd FileType gitcommit set textwidth=72
+
 function! Preserve(command)
   let pos = getpos('.')
   execute a:command
   call setpos('.', pos)
 endfunction
-
-autocmd BufWritePre BUCK :call Preserve('%!buildifier')
-autocmd BufWritePre BUILD :call Preserve('%!buildifier')
 
 set hidden " Don't force save on buffer switch

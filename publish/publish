@@ -15,7 +15,7 @@ hostname=reich.illicitonion.com
 username=daw63
 
 date="$(date +"%Y%m%d")"
-dir="/dump/${date}"
+dir="/var/www/reich.illicitonion.com/dump/${date}"
 
 ssh ${username}@${hostname} mkdir -p -m 0755 "${dir}"
 scp "${src}" "${username}@${hostname}:\"${dir}/${dst}\""
