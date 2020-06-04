@@ -1,0 +1,11 @@
+#!/bin/bash -eu
+
+if [[ $# != 1 ]]; then
+  echo >&2 "Usage: $0 PR_NUMBER"
+  exit 1
+fi
+
+pr="$1"
+
+git fetch origin "+pull/${pr}/head:pull/${pr}/head"
+git checkout "refs/heads/pull/${pr}/head"

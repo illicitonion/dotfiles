@@ -11,3 +11,4 @@ symlink git-repick ~/bin/git-repick
 symlink git-unmerge ~/bin/git-unmerge
 symlink git-unmerged ~/bin/git-unmerged
 symlink git-addremote ~/bin/git-addremote
+symlink git-checkout-pr ~/bin/git-checkout-pr
