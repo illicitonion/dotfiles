@@ -5,11 +5,8 @@ if [[ $# -ne 1 ]]; then
   exit 1
 fi
 username="$1"
+remote="$(git remote show origin -n | grep 'Fetch URL: ' | awk '{print $3}')"
+prefix="${remote%%:*}"
+suffix="${remote##*/}"
 
-repo_name="$(git remote -v | grep git@github.com | cut -d / -f2 | cut -d . -f1 | sort -u)"
-if [[ $(echo "${repo_name}" | wc -w) -ne 1 ]]; then
-  echo >&2 "Could not determine repo name from options ${repo_name}"
-  exit 1
-fi
-
-git remote add "${username}" "git@github.com:${username}/${repo_name}.git"
+git remote add "${username}" "${prefix}:${username}/${suffix}"
