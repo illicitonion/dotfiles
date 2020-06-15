@@ -19,7 +19,9 @@ set laststatus=2
 set number
 
 set autoindent
+set tabstop=2
 set shiftwidth=2
+set expandtab
 
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType objc set tabstop=4|set shiftwidth=4|set expandtab
