@@ -1,0 +1,3 @@
+#!/bin/bash -eu
+
+abspath "$1" | perl -p -e 'chomp if eof' | pbcopy

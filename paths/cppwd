@@ -1,0 +1,3 @@
+#!/bin/bash -eu
+
+pwd | perl -p -e 'chomp if eof' | pbcopy
