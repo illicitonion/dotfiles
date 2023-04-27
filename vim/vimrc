@@ -25,7 +25,7 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType objc set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType shell set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType go set tabstop=4|set shiftwidth=4
 
 autocmd FileType gitcommit set textwidth=72
