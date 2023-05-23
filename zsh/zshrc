@@ -24,3 +24,5 @@ setopt nomenucomplete
 PROMPT='%~ %# '
 
 WORDCHARS="${WORDCHARS}@"
+
+alias k=kubectl
