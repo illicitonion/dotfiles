@@ -1,11 +1,18 @@
 [alias]
-	l = log --stat --pretty=medium --graph --decorate
-	staged = diff --name-only --cached
-	unstaged = ls-files -m
-	unadded = ls-files . --exclude-standard --others
-	deleteremote = push origin --delete
+  l = log --stat --pretty=medium --graph --decorate
+  staged = diff --name-only --cached
+  unstaged = ls-files -m
+  unadded = ls-files . --exclude-standard --others
+  deleteremote = push origin --delete
+  get-commit-message = log --format=%B -n 1
+  get-go-pseudo = !TZ=UTC0 git --no-pager show --quiet --abbrev=12 --date='format-local:%Y%m%d%H%M%S' --format="%cd-%h"
 [user]
-	email = dawagner@gmail.com
-	name = Daniel Wagner-Hall
+  email = dawagner@gmail.com
+  name = Daniel Wagner-Hall
 [push]
-	default = simple
+  default = simple
+  autoSetupRemote = true
+[init]
+  defaultBranch = main
+[pull]
+  rebase = true
