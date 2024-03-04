@@ -1,8 +1,0 @@
-#!/bin/bash -eu
-if [[ $# == 0 ]]; then
-  remote="origin"
-else
-  remote="$1"
-  shift
-fi
-git push --set-upstream "${remote}" "$(git rev-parse --abbrev-ref HEAD)" "$@"
